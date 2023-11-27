@@ -1,0 +1,200 @@
+$pink: #ffd3cb;
+$yellow: #f6b055;
+$blue: #a2f1ff;
+$green: #8fe295;
+
+.landingContainer {
+  position: relative;
+}
+canvas {
+  /* all four are needed to support the most browsers */
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+/* optional: can also be applied to `img` tags */
+
+.canvasContainer {
+  //   position: absolute;
+  //   top: 0px;
+  //   left: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+.landing {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+
+.intro {
+  position: relative;
+  height: 100vh;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  line-height: 3.6rem;
+  margin: 0 40px;
+}
+.projectContainer {
+  padding-top: 20px;
+  .project {
+    margin-bottom: 200px;
+    a {
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      .projectTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 40px;
+        gap: 0.4rem;
+        & > * {
+          width: 50%;
+        }
+        h1 {
+          margin: 0.4rem 0;
+        }
+        .label {
+          padding: 8px 16px;
+          border: 1px solid #000;
+          border-radius: 100px;
+          width: fit-content;
+        }
+      }
+
+      .projectImg {
+        // width: 50%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.tag {
+  padding: 8px 16px;
+  margin: 0.4rem;
+  border: 1px solid #000;
+  border-radius: 100px;
+  font-size: inherit;
+  .tagText {
+    pointer-events: none;
+    font-weight: 300;
+    color: #000;
+  }
+}
+.one {
+  background-color: $pink;
+}
+.two {
+  background-color: $yellow;
+}
+.three {
+  background-color: $blue;
+}
+.four {
+  background-color: $green;
+}
+.viewProject a {
+  // padding: 0px 46px;
+  border-top: 1px solid black;
+  margin-top: 200px;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    .arrow:before {
+      width: 100px;
+    }
+  }
+  .arrow {
+    display: inline-block;
+
+    cursor: pointer;
+  }
+
+  .arrow:before {
+    content: '';
+    height: 2px;
+    width: 60px;
+    background-color: #000;
+    display: block;
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 24px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .arrow:after {
+    content: '';
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    transform: rotate(135deg);
+  }
+}
+.sentence {
+  position: relative;
+  .textContainer {
+    position: absolute;
+
+    bottom: 60px;
+    left: 280px;
+    line-height: 24px;
+    .arrow {
+      position: absolute;
+      top: -40px;
+      left: -80px;
+    }
+    .text {
+      // font-family: 'Playpen Sans', 'Manrope', sans-serif;
+      position: absolute;
+      width: 185px;
+      top: -55px;
+      left: 0px;
+      // rotate: -25deg;
+    }
+  }
+}
+.design {
+  position: relative;
+  cursor: pointer;
+  color: #000;
+}
+
+@media screen and (max-width: 800px) {
+  .landing {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 20px !important;
+  }
+  .intro {
+    margin: 0 20px;
+  }
+  .projectTitle {
+    flex-direction: column !important;
+    width: 100%;
+    align-items: flex-start !important;
+    margin: 0 20px !important;
+    & > * {
+      width: 90% !important;
+    }
+  }
+}

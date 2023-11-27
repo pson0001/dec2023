@@ -1,0 +1,27 @@
+.pageContainer {
+  padding-top: 160px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  // height: calc(100vh - 160px - 164.5px);
+  .page {
+    padding: 60px 120px;
+    height: 100%;
+    flex-grow: 1;
+    .photo {
+      width: 20vw;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .pageContainer {
+    padding-top: 80px;
+    .page {
+      padding: 20px 60px;
+    }
+  }
+}

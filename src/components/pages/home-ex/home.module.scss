@@ -1,0 +1,27 @@
+.projects {
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+
+.projects h2 {
+  font-size: 200px;
+  width: 1400px;
+  flex-shrink: 0;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  color: #e10600;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.space {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+}

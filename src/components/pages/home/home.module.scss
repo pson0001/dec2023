@@ -1,0 +1,31 @@
+// .landingContainer {
+//   width: 100vw;
+//   height: 200vh;
+//   .placeholder {
+//     height: 100%;
+//     width: 50%;
+//     background-image: linear-gradient(red, yellow);
+//   }
+//   .ball {
+//     position: fixed;
+//     z-index: 3;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     pointer-events: none;
+//   }
+// }
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+}
+.faceContainer {
+  position: absolute;
+  top: 38.8%;
+  left: 52.6%;
+}
+.space {
+  height: 100vh;
+}
