@@ -19,10 +19,6 @@ const Home = () => {
     scroll()
   })
 
-  const moveFace = (e) => {
-    console.log(e)
-  }
-
   const mousePosition = useMousePosition()
   const faceRef = useRef()
 
@@ -33,28 +29,40 @@ const Home = () => {
     const deg = (rad * 180) / Math.PI
     return deg
   }
-  // useEffect(() => {
-  if (faceRef.current) {
-    const face = faceRef.current.getBoundingClientRect()
-    const anchorX = face.left + face.width / 2
-    const anchorY = face.top + face.height / 2
+  useEffect(() => {
+    if (faceRef.current) {
+      const face = faceRef.current.getBoundingClientRect()
+      const anchorX = face.left + face.width / 2
+      const anchorY = face.top + face.height / 2
 
-    const angleDeg = angle(mousePosition.x, mousePosition.y, anchorX, anchorY)
-    const eyes = document.querySelectorAll('#eye')
-    // const mouth = document.querySelector('#mouth')
+      const angleDeg = angle(mousePosition.x, mousePosition.y, anchorX, anchorY)
+      const eyes = document.querySelectorAll('#eye')
+      const mouth = document.querySelector('#mouth')
 
-    console.log(angleDeg)
-    eyes.forEach((eye) => {
-      eye.style.transform = `rotate(${180 + angleDeg}deg)`
-    })
-    //  mouth.style.transform = `rotate(${90 + angleDeg}deg)`s
-  }
-  // }, [faceRef, mousePosition])
+      eyes.forEach((eye) => {
+        eye.style.transform = `rotate(${180 + angleDeg}deg)`
+      })
+
+      if (angleDeg >= 0 && angleDeg <= 90) {
+        mouth.style.left = `26px`
+        mouth.style.top = `48px`
+      } else if (angleDeg > 90 && angleDeg <= 180) {
+        mouth.style.left = `34px`
+        mouth.style.top = `48px`
+      } else if (angleDeg < -115 && angleDeg >= -180) {
+        mouth.style.left = `34px`
+        mouth.style.top = `52px`
+      } else {
+        mouth.style.left = `26px`
+        mouth.style.top = `52px`
+      }
+    }
+  }, [faceRef, mousePosition])
 
   return (
     <div className={c.homeContainer}>
       <div className={c.faceContainer} ref={faceRef}>
-        <Face />
+        <Face faceRef={faceRef} />
       </div>
       <Landing />
 
