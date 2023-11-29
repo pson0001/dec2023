@@ -1,17 +1,13 @@
 import c from './landing.module.scss'
-import { container, item } from './animation'
+import { container, item } from '../utils/animation'
 import { motion } from 'framer-motion'
 
-const Landing = () => {
+// eslint-disable-next-line react/prop-types
+const Landing = ({ landingRef }) => {
   const subTitle = `Hi, I'm`
   const title = `PING S   NG`
   const description = `I’M A PASSIONATE UX/UI DESIGNER AND DEVELOPER, BASED IN AUSTRALIA. I TRANSFORM IDEAS INTO BEAUTIFUL AND ENGAGING PRODUCTS THAT CONNECT THE VISION WITH EMOTIONS.`
-  // const labels = [
-  //   { name: 'USER RESEARCH' },
-  //   { name: 'UX DESIGN' },
-  //   { name: 'UI DESIGN' },
-  //   { name: 'FRONT-END' },
-  // ]
+
   return (
     <div className={c.landingContainer}>
       <div className={c.intro}>
@@ -27,11 +23,16 @@ const Landing = () => {
               )
             })}
           </motion.p>
-          <motion.div variants={container} initial="hidden" animate="visible">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            ref={landingRef}
+          >
             {title.split('').map((word, index) => {
               return (
                 <span key={index} className={c.mask}>
-                  <motion.h1 variants={item} key={index}>
+                  <motion.h1 variants={item} key={index} id={`letter-${word}`}>
                     {word}
                   </motion.h1>
                 </span>

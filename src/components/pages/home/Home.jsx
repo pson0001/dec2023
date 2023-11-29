@@ -1,15 +1,20 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import c from './home.module.scss'
-// import Ball from '../../assets/ball.svg'
 import Landing from './landing/Landing'
 import Face from './face/Face'
 import useMousePosition from './useMousePosition'
-
-// import gsap from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// gsap.registerPlugin(ScrollTrigger)
+import useWindowSize from './utils/use-window-size'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Project from './project/Project'
+gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  // Load LocomotiveScroll
   useEffect(() => {
     const scroll = async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default
@@ -19,6 +24,7 @@ const Home = () => {
     scroll()
   })
 
+  // Eye rotate following mouse
   const mousePosition = useMousePosition()
   const faceRef = useRef()
 
@@ -29,6 +35,7 @@ const Home = () => {
     const deg = (rad * 180) / Math.PI
     return deg
   }
+
   useEffect(() => {
     if (faceRef.current) {
       const face = faceRef.current.getBoundingClientRect()
@@ -59,13 +66,52 @@ const Home = () => {
     }
   }, [faceRef, mousePosition])
 
+  // Put face to the correct position
+  const landingRef = useRef()
+  const [facePosition, setFacePosition] = useState([0, 0])
+  const windowSize = useWindowSize()
+  useEffect(() => {
+    if (landingRef.current) {
+      const target = landingRef.current.getBoundingClientRect()
+      setFacePosition([`${target.left - 152}px`, `${target.top - 500 + 60}px`])
+    }
+  }, [windowSize])
+
+  const landingContainerRef = useRef()
+  const moveElementRef = useRef()
+  const projectRef = useRef()
+  useEffect(() => {
+    console.log(projectRef.current.getBoundingClientRect().top)
+    gsap.set(moveElementRef.current, { x: 0, y: 0 })
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: landingContainerRef.current,
+          start: 'top 0%',
+          end: 'bottom bottom',
+          toggleActions: 'restart none reverse none',
+          scrub: true,
+          markers: true,
+        },
+      })
+      .to(moveElementRef.current, {
+        x: -138,
+        //     y: projectRef.current.getBoundingClientRect().top + window.scrollY,
+        y: `100vh`,
+      })
+  }, [landingContainerRef, moveElementRef, projectRef])
+
   return (
-    <div className={c.homeContainer}>
-      <div className={c.faceContainer} ref={faceRef}>
+    <div className={c.homeContainer} ref={landingContainerRef}>
+      <div
+        className={c.faceContainer}
+        ref={moveElementRef}
+        style={{ left: facePosition[0], top: facePosition[1] }}
+      >
         <Face faceRef={faceRef} />
       </div>
-      <Landing />
-
+      <Landing landingRef={landingRef} />
+      <Project projectRef={projectRef} />
       <div className={c.space}></div>
     </div>
   )

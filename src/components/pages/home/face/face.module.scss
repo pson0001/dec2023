@@ -1,5 +1,5 @@
 .decorContainer {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,9 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   .eyeContainer {
     position: relative;
     margin-top: 20px;
@@ -59,29 +62,88 @@
   }
 }
 .circlesContainer {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
   .circle {
     width: 300px;
     height: 300px;
     border: 1px solid rgba($color: #fff, $alpha: 0.2);
     border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     &.one {
       width: 1000px;
       height: 1000px;
+
+      transform-origin: 0% 0%;
+      animation: orbit 20s linear infinite;
+      &::after {
+        width: 8px;
+        height: 8px;
+        content: '';
+        background-color: #fff;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -4px;
+      }
     }
     &.two {
       width: 750px;
       height: 750px;
+      transform-origin: 0% 0%;
+      animation: orbit 30s linear infinite;
+      &::after {
+        width: 10px;
+        height: 10px;
+        content: '';
+        background-color: #fff;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -5px;
+      }
     }
     &.three {
       width: 500px;
       height: 500px;
+      transform-origin: 0% 0%;
+      animation: orbitReverse 20s linear infinite;
+      &::after {
+        width: 15px;
+        height: 15px;
+        content: '';
+        background-color: #fff;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -7.5px;
+      }
     }
     &.four {
       width: 300px;
       height: 300px;
+
+      transform-origin: 0% 0%;
+      animation: orbit 15s linear infinite;
+      &::after {
+        width: 8px;
+        height: 8px;
+        content: '';
+        background-color: #fff;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -4px;
+      }
     }
     &.five {
       width: 150px;
@@ -109,5 +171,56 @@
       width: 1200px;
       height: 1200px;
     }
+  }
+}
+.starsContainer {
+  position: absolute;
+  .star {
+    position: absolute;
+    &:nth-child(even) {
+      animation: blink 1s linear infinite;
+    }
+  }
+  .smallCircle {
+    position: absolute;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba($color: #fff, $alpha: 0.2);
+  }
+}
+
+// Animations
+@keyframes orbit {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes orbitReverse {
+  0% {
+    rotate: 180deg;
+  }
+
+  100% {
+    rotate: -180deg;
+  }
+}
+
+@keyframes blink {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 0.4;
+  }
+  20% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
   }
 }
