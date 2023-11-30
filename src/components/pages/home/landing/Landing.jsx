@@ -12,7 +12,7 @@ const Landing = ({ landingRef }) => {
     <div className={c.landingContainer}>
       <div className={c.intro}>
         <div className={c.body}>
-          <motion.p variants={container} initial="hidden" animate="visible">
+          <motion.p variants={container} initial="hidden" whileInView="visible">
             {subTitle.split(' ').map((word, index) => {
               return (
                 <span key={index} className={c.mask}>
@@ -26,7 +26,7 @@ const Landing = ({ landingRef }) => {
           <motion.div
             variants={container}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             ref={landingRef}
           >
             {title.split('').map((word, index) => {
@@ -40,7 +40,7 @@ const Landing = ({ landingRef }) => {
             })}
           </motion.div>
 
-          <motion.p variants={container} initial="hidden" animate="visible">
+          <motion.p variants={container} initial="hidden" whileInView="visible">
             {description.split(' ').map((word, index) => {
               return (
                 <span key={index} className={c.mask}>
@@ -52,18 +52,6 @@ const Landing = ({ landingRef }) => {
             })}
           </motion.p>
         </div>
-        {/* <motion.div
-          className={c.labels}
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {labels.map((label, index) => (
-            <motion.div variants={itemLabel} key={index} className={c.label}>
-              {label.name}
-            </motion.div>
-          ))}
-        </motion.div> */}
       </div>
     </div>
   )

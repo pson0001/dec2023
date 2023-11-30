@@ -20,11 +20,10 @@ export const item = {
     transition: { duration: 0.2, ...transition },
   },
 }
-export const itemLabel = {
-  hidden: { scale: 0 },
+export const image = {
+  hidden: { y: '20%' },
   visible: {
-    scale: 1,
-
-    transition: { delay: 1.4, duration: 0.2, ...transition },
+    y: 0,
+    transition: { delay: 0.2, duration: 1, ...transition },
   },
 }

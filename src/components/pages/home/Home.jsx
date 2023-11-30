@@ -7,6 +7,10 @@ import useWindowSize from './utils/use-window-size'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Project from './project/Project'
+import Portal from './projects/Portal'
+import Mapper from './projects/Mapper'
+import Peerview from './projects/peerview'
+import Library from './projects/Library'
 gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
@@ -80,38 +84,86 @@ const Home = () => {
   const landingContainerRef = useRef()
   const moveElementRef = useRef()
   const projectRef = useRef()
+  const partOneRef = useRef()
+  const portalRef = useRef()
+  const mapperRef = useRef()
+
   useEffect(() => {
-    console.log(projectRef.current.getBoundingClientRect().top)
     gsap.set(moveElementRef.current, { x: 0, y: 0 })
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: landingContainerRef.current,
-          start: 'top 0%',
+          trigger: partOneRef.current,
+          start: 'top top',
           end: 'bottom bottom',
           toggleActions: 'restart none reverse none',
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       })
       .to(moveElementRef.current, {
-        x: -138,
-        //     y: projectRef.current.getBoundingClientRect().top + window.scrollY,
-        y: `100vh`,
+        x: -167,
+        y: window.innerHeight + 20,
       })
-  }, [landingContainerRef, moveElementRef, projectRef])
+
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: portalRef.current,
+    //       start: 'top bottom',
+    //       end: 'bottom bottom',
+    //       toggleActions: 'restart none reverse none',
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   })
+    //   .to(moveElementRef.current, {
+    //     x: -360,
+    //     y: window.innerHeight * 2 + 60,
+    //   })
+
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: mapperRef.current,
+    //       start: 'top bottom',
+    //       end: 'bottom bottom',
+    //       toggleActions: 'restart none reverse none',
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   })
+    //   .to(moveElementRef.current, {
+    //     x: 260,
+    //     y: window.innerHeight * 3,
+    //   })
+  }, [landingContainerRef, moveElementRef, partOneRef, portalRef, mapperRef])
 
   return (
     <div className={c.homeContainer} ref={landingContainerRef}>
-      <div
-        className={c.faceContainer}
-        ref={moveElementRef}
-        style={{ left: facePosition[0], top: facePosition[1] }}
-      >
-        <Face faceRef={faceRef} />
+      <div ref={partOneRef}>
+        <div
+          className={c.faceContainer}
+          ref={moveElementRef}
+          style={{ left: facePosition[0], top: facePosition[1] }}
+        >
+          <Face faceRef={faceRef} />
+        </div>
+        <Landing landingRef={landingRef} />
+        <Project projectRef={projectRef} />
       </div>
-      <Landing landingRef={landingRef} />
-      <Project projectRef={projectRef} />
+      <div ref={portalRef}>
+        <Portal />
+      </div>
+      <div ref={mapperRef}>
+        <Mapper />
+      </div>
+      <div>
+        <Peerview />
+      </div>
+      <div>
+        <Library />
+      </div>
       <div className={c.space}></div>
     </div>
   )

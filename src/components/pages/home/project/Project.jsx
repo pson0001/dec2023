@@ -4,13 +4,17 @@ import { motion } from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
 const Project = ({ projectRef }) => {
-  const title = `PR JECT`
+  const title = `PR JECTS`
 
   return (
     <div className={c.landingContainer}>
       <div className={c.intro}>
         <div className={c.body}>
-          <motion.div variants={container} initial="hidden" animate="visible">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+          >
             {title.split('').map((word, index) => {
               return (
                 <span key={index} className={c.mask}>
