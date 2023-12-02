@@ -9,8 +9,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Project from './project/Project'
 import Portal from './projects/Portal'
 import Mapper from './projects/Mapper'
-import Peerview from './projects/peerview'
+import Peerview from './projects/Peerview'
 import Library from './projects/Library'
+import Next from './next/Next'
+import transition from '../../layout/transition'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
@@ -105,38 +108,6 @@ const Home = () => {
         x: -167,
         y: window.innerHeight + 20,
       })
-
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: portalRef.current,
-    //       start: 'top bottom',
-    //       end: 'bottom bottom',
-    //       toggleActions: 'restart none reverse none',
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //   })
-    //   .to(moveElementRef.current, {
-    //     x: -360,
-    //     y: window.innerHeight * 2 + 60,
-    //   })
-
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: mapperRef.current,
-    //       start: 'top bottom',
-    //       end: 'bottom bottom',
-    //       toggleActions: 'restart none reverse none',
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //   })
-    //   .to(moveElementRef.current, {
-    //     x: 260,
-    //     y: window.innerHeight * 3,
-    //   })
   }, [landingContainerRef, moveElementRef, partOneRef, portalRef, mapperRef])
 
   return (
@@ -152,21 +123,24 @@ const Home = () => {
         <Landing landingRef={landingRef} />
         <Project projectRef={projectRef} />
       </div>
+
       <div ref={portalRef}>
         <Portal />
       </div>
       <div ref={mapperRef}>
         <Mapper />
       </div>
+
       <div>
         <Peerview />
       </div>
       <div>
         <Library />
       </div>
-      <div className={c.space}></div>
+
+      <Next />
     </div>
   )
 }
 
-export default Home
+export default transition(Home)

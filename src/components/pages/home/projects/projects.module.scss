@@ -5,7 +5,6 @@
   justify-content: flex-end;
   margin: 0 10vw;
   height: 100vh;
-
   &.leftAlign {
     justify-content: flex-start;
   }
@@ -20,6 +19,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    max-width: 700px;
     gap: 20px;
     flex-direction: column;
     position: relative;
@@ -67,7 +67,7 @@
       line-height: 1.3;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      //  justify-content: center;
       flex-wrap: wrap;
       span {
         margin-right: 3px;
@@ -78,6 +78,85 @@
         overflow: hidden;
         display: inline-flex;
       }
+    }
+  }
+  .imgContainer {
+    position: relative;
+
+    .portalBall {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: -30%;
+      transform: translateY(-50%);
+    }
+    .peerviewBall {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: -30%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 50%;
+      left: -40%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba($color: #fff, $alpha: 0.2);
+    }
+    &::before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 50%;
+      left: -55%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba($color: #fff, $alpha: 0.2);
+    }
+  }
+
+  .leftImgContainer {
+    position: relative;
+
+    .mapperBall {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      right: -30%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 50%;
+      right: -40%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba($color: #fff, $alpha: 0.2);
+    }
+    &::before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 50%;
+      right: -55%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba($color: #fff, $alpha: 0.2);
     }
   }
 }

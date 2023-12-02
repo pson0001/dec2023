@@ -13,6 +13,19 @@ export const container = {
   },
 }
 
+export const imgContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.02,
+      staggerDirection: 1,
+    },
+  },
+}
+
 export const item = {
   hidden: { y: '150%' },
   visible: {

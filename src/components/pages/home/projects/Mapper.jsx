@@ -1,56 +1,35 @@
 import c from './projects.module.scss'
-import { container, item, image } from '../utils/animation'
+import { container, item, image, imgContainer } from '../utils/animation'
 import { motion } from 'framer-motion'
 import mapper from '../../../assets/mapper.png'
-import { useMemo } from 'react'
-import { randomIntFromRange } from '../utils/utils'
-import star from '../../../assets/star.svg'
+
+import Spline from '@splinetool/react-spline'
+import Background from './Background'
 
 const Mapper = () => {
   const title = `COURSE MAPPER`
-  const description = `UX DESIGN / UI DESIGN / FRONT END DEV`
+  const description = `Generating over 60,000 personalized digital course plans for students through the efforts of course advisers`
 
-  const starArray = useMemo(() => {
-    return Array.from({ length: 20 }, (v, i) => (
-      <div
-        className={c.star}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(0, window.innerHeight)}px`,
-          left: `${randomIntFromRange(0, window.innerWidth)}px`,
-        }}
-      >
-        <img src={star} alt="star" />
-      </div>
-    ))
-  }, [])
-  const circleArray = useMemo(() => {
-    return Array.from({ length: 10 }, (v, i) => (
-      <div
-        className={c.smallCircle}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(0, window.innerHeight)}px`,
-          left: `${randomIntFromRange(0, window.innerWidth)}px`,
-        }}
-      ></div>
-    ))
-  }, [])
   return (
     <div className={[c.projectContainer, c.leftAlign].join(' ')}>
       <div className={c.titleContainer}>
         <div className={[c.content, c.leftAlign].join(' ')}>
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className={c.pictureContainer}>
-              <motion.div variants={image}>
-                <img src={mapper} alt="" />
-              </motion.div>
+          <div className={c.leftImgContainer}>
+            <motion.div
+              variants={imgContainer}
+              initial="hidden"
+              whileInView="visible"
+            >
+              <div className={c.pictureContainer}>
+                <motion.div variants={image}>
+                  <img src={mapper} alt="" />
+                </motion.div>
+              </div>
+            </motion.div>
+            <div className={c.mapperBall}>
+              <Spline scene="https://prod.spline.design/dbly-3QBB-fc4Icx/scene.splinecode" />
             </div>
-          </motion.div>
+          </div>
           <motion.div
             variants={container}
             initial="hidden"
@@ -79,8 +58,7 @@ const Mapper = () => {
           </motion.p>
         </div>
       </div>
-      <div className={c.starsContainer}>{starArray}</div>
-      <div className={c.starsContainer}>{circleArray}</div>
+      <Background />
     </div>
   )
 }

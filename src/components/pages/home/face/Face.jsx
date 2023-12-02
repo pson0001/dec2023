@@ -1,37 +1,7 @@
 /* eslint-disable react/prop-types */
-// import { useEffect, useRef, useState } from 'react'
 import c from './face.module.scss'
-import star from '../../../assets/star.svg'
-import { randomIntFromRange } from '../utils/utils'
-import { useMemo } from 'react'
+import Background from '../projects/Background'
 const Face = ({ faceRef }) => {
-  const starArray = useMemo(() => {
-    return Array.from({ length: 20 }, (v, i) => (
-      <div
-        className={c.star}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(-800, 800)}px`,
-          left: `${randomIntFromRange(-800, 800)}px`,
-        }}
-      >
-        <img src={star} alt="star" />
-      </div>
-    ))
-  }, [])
-  const circleArray = useMemo(() => {
-    return Array.from({ length: 10 }, (v, i) => (
-      <div
-        className={c.smallCircle}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(-800, 800)}px`,
-          left: `${randomIntFromRange(-800, 800)}px`,
-        }}
-      ></div>
-    ))
-  }, [])
-
   return (
     <div className={c.decorContainer}>
       <div className={c.circlesContainer}>
@@ -53,8 +23,8 @@ const Face = ({ faceRef }) => {
         <div className={[c.circle, c.one].join(' ')}></div>
         <div className={[c.circle, c.two].join(' ')}></div>
       </div>
-      <div className={c.starsContainer}>{starArray}</div>
-      <div className={c.starsContainer}>{circleArray}</div>
+
+      <Background />
     </div>
   )
 }

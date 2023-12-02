@@ -5,6 +5,7 @@ import NoPage from './components/noPage/NoPage'
 
 import { AnimatePresence } from 'framer-motion'
 import Home from './components/pages/home/Home'
+import About from './components/pages/about/About'
 
 function App() {
   const location = useLocation()
@@ -14,6 +15,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>

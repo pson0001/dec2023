@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -100px;
 }
 .face {
   width: 80px;
@@ -151,6 +154,12 @@
       height: 150px;
     }
   }
+  .astronaut {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-55px);
+    left: 420px;
+  }
 }
 .bigCirclesContainer {
   .circle {
@@ -172,22 +181,6 @@
       width: 1200px;
       height: 1200px;
     }
-  }
-}
-.starsContainer {
-  position: absolute;
-  .star {
-    position: absolute;
-    &:nth-child(even) {
-      animation: blink 1s linear infinite;
-    }
-  }
-  .smallCircle {
-    position: absolute;
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba($color: #fff, $alpha: 0.2);
   }
 }
 

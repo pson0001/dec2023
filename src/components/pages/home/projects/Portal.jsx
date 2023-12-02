@@ -1,41 +1,13 @@
 import c from './projects.module.scss'
-import { container, item, image } from '../utils/animation'
+import { container, item, image, imgContainer } from '../utils/animation'
 import { motion } from 'framer-motion'
 import portal from '../../../assets/portal.png'
-import { useMemo } from 'react'
-import { randomIntFromRange } from '../utils/utils'
-import star from '../../../assets/star.svg'
+import Background from './Background'
+import Spline from '@splinetool/react-spline'
 
 const Portal = () => {
   const title = `STUDENT PORTAL`
-  const description = `UX DESIGN / UI DESIGN / FRONT END DEV`
-
-  const starArray = useMemo(() => {
-    return Array.from({ length: 20 }, (v, i) => (
-      <div
-        className={c.star}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(0, window.innerHeight)}px`,
-          left: `${randomIntFromRange(0, window.innerWidth)}px`,
-        }}
-      >
-        <img src={star} alt="star" />
-      </div>
-    ))
-  }, [])
-  const circleArray = useMemo(() => {
-    return Array.from({ length: 10 }, (v, i) => (
-      <div
-        className={c.smallCircle}
-        key={i}
-        style={{
-          top: `${randomIntFromRange(0, window.innerHeight)}px`,
-          left: `${randomIntFromRange(0, window.innerWidth)}px`,
-        }}
-      ></div>
-    ))
-  }, [])
+  const description = `The New Monash University's student portal(hub) for over 80,000+ students`
 
   return (
     <div className={c.projectContainer}>
@@ -68,22 +40,25 @@ const Portal = () => {
               )
             })}
           </motion.p>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className={c.pictureContainer}>
-              <motion.div variants={image}>
-                <img src={portal} alt="" />
-              </motion.div>
+          <div className={c.imgContainer}>
+            <motion.div
+              variants={imgContainer}
+              initial="hidden"
+              whileInView="visible"
+            >
+              <div className={c.pictureContainer}>
+                <motion.div variants={image}>
+                  <img src={portal} alt="" />
+                </motion.div>
+              </div>
+            </motion.div>
+            <div className={c.portalBall}>
+              <Spline scene="https://prod.spline.design/dTDB13ONJqiJHBKf/scene.splinecode" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-      <div className={c.starsContainer}>{starArray}</div>
-      <div className={c.starsContainer}>{circleArray}</div>
+      <Background />
     </div>
   )
 }

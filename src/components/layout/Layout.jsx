@@ -12,7 +12,7 @@ const Layout = () => {
             </Link>
           </li>
           <li>
-            <Link to="/ping-me">Ping Me</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>

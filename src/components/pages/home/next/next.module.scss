@@ -1,65 +1,45 @@
-.decorContainer {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.face {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  border-radius: 100px;
+.projectContainer {
   position: relative;
   display: flex;
-  flex-direction: row;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  .eyeContainer {
-    position: relative;
-    margin-top: 20px;
-    margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10vw;
+  height: 100vh;
+  a {
+    text-decoration: none;
+  }
+  .nextBall {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    height: 120px;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 100%;
+    overflow: hidden;
+    color: #101010;
     display: flex;
-    height: 20px;
-    width: 20px;
-    .eye {
-      position: relative;
-      width: 4px;
-      height: 4px;
-      display: block;
-      border-radius: 50%;
-      margin: 10px 10px;
-
-      &::before {
-        content: '';
-        position: absolute;
-
-        left: 6px;
-        transform: translate(-50%, -50%);
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #101010;
-      }
-    }
+    align-items: center;
+    justify-content: center;
+  }
+  .slide {
+    margin: 0 40px 0 84px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .icon {
+    height: 44px;
+  }
+  .nextBall,
+  .slide {
+    transition: 0.3s;
   }
 
-  .mouth {
-    position: absolute;
-    width: 20px;
-    height: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border: 3px solid #101010;
-    border-bottom: 0;
-    rotate: 180deg;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    top: 50px;
-    left: 30px;
-    transition: 0.3s ease all;
+  .nextBall:hover .slide {
+    margin-left: -110px;
   }
 }
 .circlesContainer {
@@ -67,6 +47,7 @@
   width: 1000px;
   height: 1000px;
   .circle {
+    z-index: -2;
     width: 300px;
     height: 300px;
     border: 1px solid rgba($color: #fff, $alpha: 0.2);
@@ -145,52 +126,12 @@
         transform: translateY(-50%);
         left: -8px;
       }
-    }
-    &.five {
-      width: 150px;
-      height: 150px;
-    }
-  }
-}
-.bigCirclesContainer {
-  .circle {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border: 1px solid rgba($color: #fff, $alpha: 0.2);
-    border-radius: 100%;
-
-    &.one {
-      left: 400px;
-      top: -300px;
-      width: 1200px;
-      height: 1200px;
-    }
-    &.two {
-      left: -600px;
-      top: 100px;
-      width: 1200px;
-      height: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
-.starsContainer {
-  position: absolute;
-  .star {
-    position: absolute;
-    &:nth-child(even) {
-      animation: blink 1s linear infinite;
-    }
-  }
-  .smallCircle {
-    position: absolute;
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba($color: #fff, $alpha: 0.2);
-  }
-}
-
 // Animations
 @keyframes orbit {
   0% {
@@ -208,20 +149,5 @@
 
   100% {
     rotate: -180deg;
-  }
-}
-
-@keyframes blink {
-  0% {
-    scale: 1;
-  }
-  10% {
-    scale: 0.4;
-  }
-  20% {
-    scale: 1;
-  }
-  100% {
-    scale: 1;
   }
 }

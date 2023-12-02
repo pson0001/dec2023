@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
 const Landing = ({ landingRef }) => {
-  const subTitle = `Hi, I'm`
+  const subTitle = `HI, I'M`
   const title = `PING S   NG`
-  const description = `I’M A PASSIONATE UX/UI DESIGNER AND DEVELOPER, BASED IN AUSTRALIA. I TRANSFORM IDEAS INTO BEAUTIFUL AND ENGAGING PRODUCTS THAT CONNECT THE VISION WITH EMOTIONS.`
+  const description = `I’M A PASSIONATE PRODUCT DESIGNER AND DEVELOPER, BASED IN AUSTRALIA. I TRANSFORM IDEAS INTO BEAUTIFUL AND ENGAGING PRODUCTS THAT CONNECT THE VISION WITH EMOTIONS.`
 
   return (
     <div className={c.landingContainer}>
