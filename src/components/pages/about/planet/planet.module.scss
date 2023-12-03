@@ -6,14 +6,14 @@
   justify-content: center;
   gap: 60px;
   position: relative;
-  padding-top: 240px;
+  padding-top: 160px;
   &::before {
     content: '';
     position: absolute;
     right: -200px;
     top: 0;
-    height: 1400px;
-    width: 1400px;
+    height: 1250px;
+    width: 1250px;
     border: 4px solid #fff;
     background-color: #101010;
     border-radius: 2000px;

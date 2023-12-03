@@ -88,8 +88,6 @@ const Home = () => {
   const moveElementRef = useRef()
   const projectRef = useRef()
   const partOneRef = useRef()
-  const portalRef = useRef()
-  const mapperRef = useRef()
 
   useEffect(() => {
     gsap.set(moveElementRef.current, { x: 0, y: 0 })
@@ -101,17 +99,17 @@ const Home = () => {
           end: 'bottom bottom',
           toggleActions: 'restart none reverse none',
           scrub: true,
-          // markers: true,
         },
       })
       .to(moveElementRef.current, {
         x: -167,
         y: window.innerHeight + 20,
       })
-  }, [landingContainerRef, moveElementRef, partOneRef, portalRef, mapperRef])
+  }, [landingContainerRef, moveElementRef, partOneRef])
 
   return (
     <div className={c.homeContainer} ref={landingContainerRef}>
+      <div className={c.cursor} /> <div className={c.hand} />
       <div ref={partOneRef}>
         <div
           className={c.faceContainer}
@@ -123,21 +121,10 @@ const Home = () => {
         <Landing landingRef={landingRef} />
         <Project projectRef={projectRef} />
       </div>
-
-      <div ref={portalRef}>
-        <Portal />
-      </div>
-      <div ref={mapperRef}>
-        <Mapper />
-      </div>
-
-      <div>
-        <Peerview />
-      </div>
-      <div>
-        <Library />
-      </div>
-
+      <Portal />
+      <Mapper />
+      <Peerview />
+      <Library />
       <Next />
     </div>
   )

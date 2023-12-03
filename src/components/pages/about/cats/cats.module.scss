@@ -1,0 +1,8 @@
+.catsContainer {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 120px;
+  .catsShip {
+    transition: 0.3s ease all;
+  }
+}
