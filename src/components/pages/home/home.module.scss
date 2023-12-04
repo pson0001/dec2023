@@ -16,21 +16,20 @@
   border-radius: 50%;
   pointer-events: none;
   transition: transform 0.1s;
-}
-
-.cursor {
-  background: #fff;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  z-index: 999;
+  cursor: pointer;
 }
 
 .hand {
-  background-color: rgba($color: red, $alpha: 1);
+  background-color: rgba($color: #fff, $alpha: 1);
   top: 50%;
   width: 150px;
   height: 150px;
   z-index: 9999;
   opacity: 0;
+  color: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  cursor: pointer;
 }

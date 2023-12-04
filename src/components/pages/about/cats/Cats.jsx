@@ -30,7 +30,7 @@ const Cats = () => {
       <div className={c.catsShip} ref={catsShip}>
         <CatsIllustration />
       </div>
-      <FreeTime />
+      {/* <FreeTime /> */}
       <Background />
     </div>
   )

@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import portal from '../../../assets/portal.png'
 import Background from './Background'
 import Spline from '@splinetool/react-spline'
+import { Link } from 'react-router-dom'
 
+// eslint-disable-next-line react/prop-types
 const Portal = () => {
   const title = `STUDENT PORTAL`
   const description = `The New Monash University's student portal(hub) for over 80,000+ students`
@@ -48,7 +50,9 @@ const Portal = () => {
             >
               <div className={c.pictureContainer}>
                 <motion.div variants={image}>
-                  <img src={portal} alt="" />
+                  <Link to={'/about'}>
+                    <img src={portal} alt="" />
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

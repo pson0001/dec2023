@@ -13,8 +13,9 @@ const About = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const subtitle = `HELLO,你好`
-  const title = `I'm Ping. I'm a passionate product designer and developer, based in Australia. I transform ideas into beautiful and engaging products that connect the vision with emotions 🥰.`
+  const subtitle = `Hello, I’m Ping.`
+  const title = `I've dedicated 5 years to product design and the 2 years to branding.`
+  const titleTwo = `I create emotional design and turning big dreams into reality.`
 
   return (
     <div className={c.landingContainer}>
@@ -42,10 +43,21 @@ const About = () => {
                 </span>
               )
             })}
+          </motion.p>{' '}
+          <motion.p variants={container} initial="hidden" whileInView="visible">
+            {titleTwo.split(' ').map((word, index) => {
+              return (
+                <span key={index} className={c.mask}>
+                  <motion.span variants={item} key={index}>
+                    {word}
+                  </motion.span>
+                </span>
+              )
+            })}
           </motion.p>
         </div>
       </div>
-      <Planet />
+      {/* <Planet /> */}
       <Cats />
       <Contact />
     </div>

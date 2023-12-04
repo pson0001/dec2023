@@ -80,7 +80,7 @@ const Home = () => {
   useEffect(() => {
     if (landingRef.current) {
       const target = landingRef.current.getBoundingClientRect()
-      setFacePosition([`${target.left - 152}px`, `${target.top - 500 + 60}px`])
+      setFacePosition([`${target.left - 151}px`, `${target.top - 500 + 60}px`])
     }
   }, [windowSize])
 
@@ -107,9 +107,73 @@ const Home = () => {
       })
   }, [landingContainerRef, moveElementRef, partOneRef])
 
+  // Cursor expand
+  // const portalRef = useRef()
+  // const handRef = useRef()
+
+  // useEffect(() => {
+  //   const element = portalRef.current
+  //   const handleMouseEnter = () => {
+  //     gsap.to(handRef.current, 0.2, {
+  //       x: mousePosition.x,
+  //       y: mousePosition.y,
+  //       scale: 1,
+  //       opacity: 1,
+  //       top: '-75px',
+  //       left: '-75px',
+  //       ease: [0.6, 0.01, -0.05, 0.9],
+  //     })
+  //   }
+  //   element.addEventListener('mouseenter', handleMouseEnter)
+  //   return () => {
+  //     element.removeEventListener('mouseenter', handleMouseEnter)
+  //   }
+  // }, [mousePosition, portalRef, handRef])
+
+  // useEffect(() => {
+  //   const element = portalRef.current
+  //   const handleMouseLeave = () => {
+  //     gsap.to(handRef.current, 0.2, {
+  //       scale: 0,
+  //       opacity: 0,
+  //       top: '-75px',
+  //       left: '-75px',
+  //       ease: [0.6, 0.01, -0.05, 0.9],
+  //     })
+  //   }
+  //   element.addEventListener('mouseleave', handleMouseLeave)
+  //   return () => {
+  //     element.removeEventListener('mouseleave', handleMouseLeave)
+  //   }
+  // }, [mousePosition, portalRef, handRef])
+
+  // useEffect(() => {
+  //   const element = portalRef.current
+
+  //   const handleMouseMove = () => {
+  //     gsap.to(handRef.current, 0.2, {
+  //       x: mousePosition.x,
+  //       y: mousePosition.y,
+  //       ease: [0.6, 0.01, -0.05, 0.9],
+  //     })
+  //     //    setViewProjectLocation([mousePosition.x, mousePosition.y])
+  //   }
+
+  //   element.addEventListener('mousemove', handleMouseMove)
+  //   return () => {
+  //     element.removeEventListener('mousemove', handleMouseMove)
+  //   }
+  // }, [mousePosition, portalRef, handRef])
+  // console.log(mousePosition.x, mousePosition.y)
   return (
     <div className={c.homeContainer} ref={landingContainerRef}>
-      <div className={c.cursor} /> <div className={c.hand} />
+      {/* <div
+        className={c.hand}
+        ref={handRef}
+        //    style={{ left: viewProjectLocation[0], top: viewProjectLocation[1] }}
+      >
+        View project
+      </div> */}
       <div ref={partOneRef}>
         <div
           className={c.faceContainer}
