@@ -50,7 +50,7 @@ const Portal = () => {
             >
               <div className={c.pictureContainer}>
                 <motion.div variants={image}>
-                  <Link to={'/about'}>
+                  <Link to={'/monash-student-portal'}>
                     <img src={portal} alt="" />
                   </Link>
                 </motion.div>

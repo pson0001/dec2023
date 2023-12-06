@@ -1,0 +1,115 @@
+$font: #fff;
+$background: #f2eeea;
+$grey: #828282;
+$iconBackground: #e6ded7;
+
+.navigateButton {
+  border-top: 1px solid fff;
+  margin-top: 60px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .arrow {
+    border: solid $font;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+
+    top: 30px;
+    margin-top: 2px;
+    padding: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .arrowLine {
+    position: absolute;
+    top: 42px;
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: $font;
+    transition: all 0.4s ease;
+  }
+  .arrowText {
+    padding-left: 40px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: $font;
+    font-size: 2rem;
+
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .buttonItem {
+    position: relative;
+    padding: 20px 0px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: all 0.4s ease;
+    &:hover {
+      & .arrowLine {
+        width: 100px;
+      }
+      & .arrowText {
+        transition: all 0.4s ease;
+      }
+    }
+  }
+
+  & .previous {
+    &.arrow {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+    & .arrowLine {
+      left: -2px;
+    }
+    & .arrowText {
+      padding-left: 60px;
+      transition: all 0.4s ease;
+    }
+    &:hover {
+      & .arrowText {
+        padding-left: 120px;
+      }
+    }
+  }
+  & .next {
+    & .arrow {
+      right: 0px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    & .arrowLine {
+      right: -2px;
+    }
+    & .arrowText {
+      padding-right: 60px;
+      transition: all 0.4s ease;
+    }
+    &:hover {
+      & .arrowText {
+        padding-right: 120px;
+      }
+    }
+  }
+}
+.right {
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .navigateButton {
+    flex-direction: column;
+    .next .arrowText {
+      text-align: right;
+    }
+  }
+}

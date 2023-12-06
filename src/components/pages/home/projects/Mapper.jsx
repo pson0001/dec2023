@@ -5,6 +5,7 @@ import mapper from '../../../assets/mapper.png'
 
 import Spline from '@splinetool/react-spline'
 import Background from './Background'
+import { Link } from 'react-router-dom'
 
 const Mapper = () => {
   const title = `COURSE MAPPER`
@@ -22,7 +23,9 @@ const Mapper = () => {
             >
               <div className={c.pictureContainer}>
                 <motion.div variants={image}>
-                  <img src={mapper} alt="" />
+                  <Link to={'/monash-course-mapper'}>
+                    <img src={mapper} alt="" />
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
