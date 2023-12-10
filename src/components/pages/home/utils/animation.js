@@ -17,7 +17,6 @@ export const imgContainer = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-
     transition: {
       delayChildren: 0.1,
       staggerChildren: 0.02,
@@ -37,6 +36,13 @@ export const image = {
   hidden: { y: '20%' },
   visible: {
     y: 0,
+    transition: { delay: 0.2, duration: 1, ...transition },
+  },
+}
+export const imageSmall = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
     transition: { delay: 0.2, duration: 1, ...transition },
   },
 }

@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import peerview from '../../../assets/peerview.png'
 import Spline from '@splinetool/react-spline'
 import Background from './Background'
+import useWindowSize from '../utils/use-window-size'
 const Peerview = () => {
   const title = `PEERVIEW`
   const description = `Facilitating seamless academic peer review processes across 10 faculties`
-
+  const windowSize = useWindowSize()
   return (
     <div className={c.projectContainer}>
       <div className={c.titleContainer}>
@@ -23,10 +24,12 @@ const Peerview = () => {
                   <img src={peerview} alt="" />
                 </motion.div>
               </div>
-            </motion.div>
-            <div className={c.peerviewBall}>
-              <Spline scene="https://prod.spline.design/HCGtSCzA-tVcoa6z/scene.splinecode" />
-            </div>
+            </motion.div>{' '}
+            {windowSize.width >= 800 ? (
+              <div className={c.peerviewBall}>
+                <Spline scene="https://prod.spline.design/HCGtSCzA-tVcoa6z/scene.splinecode" />
+              </div>
+            ) : null}
           </div>
           <motion.div
             variants={container}

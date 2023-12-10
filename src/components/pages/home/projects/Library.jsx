@@ -5,11 +5,12 @@ import library from '../../../assets/library.png'
 import Background from './Background'
 
 import Spline from '@splinetool/react-spline'
+import useWindowSize from '../utils/use-window-size'
 
 const Library = () => {
   const title = `COMPONENT LIBRARY`
   const description = `Enabling component sharing across diverse projects, optimizing development efforts, and preventing redundant work duplication`
-
+  const windowSize = useWindowSize()
   return (
     <div className={[c.projectContainer, c.leftAlign].join(' ')}>
       <div className={c.titleContainer}>
@@ -52,9 +53,11 @@ const Library = () => {
                 </motion.div>
               </div>
             </motion.div>
-            <div className={c.mapperBall}>
-              <Spline scene="https://prod.spline.design/bMMzhaIyZ7PNinXK/scene.splinecode" />
-            </div>
+            {windowSize.width >= 800 ? (
+              <div className={c.mapperBall}>
+                <Spline scene="https://prod.spline.design/bMMzhaIyZ7PNinXK/scene.splinecode" />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

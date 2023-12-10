@@ -11,16 +11,15 @@ const Cats = () => {
   const catsShip = useRef()
   const catsContainer = useRef()
   useEffect(() => {
-    gsap.set(catsShip.current, { x: 0, y: 0, scale: 0.6 })
+    gsap.set(catsShip.current, { x: -200, y: 0, scale: 0.4 })
     gsap
       .timeline({
         scrollTrigger: {
           trigger: catsContainer.current,
-          start: 'top top',
+          start: 'top bottom',
           end: 'bottom bottom',
           toggleActions: 'restart none reverse none',
           scrub: true,
-          // markers: true,
         },
       })
       .to(catsShip.current, { x: 200, y: 100, scale: 0.7 })
@@ -30,7 +29,7 @@ const Cats = () => {
       <div className={c.catsShip} ref={catsShip}>
         <CatsIllustration />
       </div>
-      {/* <FreeTime /> */}
+      <FreeTime />
       <Background />
     </div>
   )

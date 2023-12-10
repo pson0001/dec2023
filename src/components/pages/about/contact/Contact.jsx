@@ -6,6 +6,9 @@ import c from './contact.module.scss'
 const Contact = () => {
   return (
     <div className={c.pageContainer}>
+      <div className={[c.hole, c.one].join(' ')} />
+      <div className={[c.hole, c.two].join(' ')} />{' '}
+      <div className={[c.hole, c.three].join(' ')} />
       <div className={c.body}>
         <div className={c.title}>
           <span>
@@ -28,7 +31,6 @@ const Contact = () => {
         </div>
       </div>
       <div></div>
-
       <Background />
     </div>
   )

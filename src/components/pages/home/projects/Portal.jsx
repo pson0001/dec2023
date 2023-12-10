@@ -5,12 +5,13 @@ import portal from '../../../assets/portal.png'
 import Background from './Background'
 import Spline from '@splinetool/react-spline'
 import { Link } from 'react-router-dom'
+import useWindowSize from '../utils/use-window-size'
 
 // eslint-disable-next-line react/prop-types
 const Portal = () => {
   const title = `STUDENT PORTAL`
   const description = `The New Monash University's student portal(hub) for over 80,000+ students`
-
+  const windowSize = useWindowSize()
   return (
     <div className={c.projectContainer}>
       <div className={c.titleContainer}>
@@ -56,9 +57,11 @@ const Portal = () => {
                 </motion.div>
               </div>
             </motion.div>
-            <div className={c.portalBall}>
-              <Spline scene="https://prod.spline.design/dTDB13ONJqiJHBKf/scene.splinecode" />
-            </div>
+            {windowSize.width >= 800 ? (
+              <div className={c.portalBall}>
+                <Spline scene="https://prod.spline.design/dTDB13ONJqiJHBKf/scene.splinecode" />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

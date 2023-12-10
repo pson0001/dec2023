@@ -202,3 +202,22 @@
     scale: 1;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .titleContainer {
+    width: 100%;
+    .content {
+      width: 100%;
+      align-items: flex-start;
+      div {
+        span {
+          font-size: 40px;
+        }
+
+        .pictureContainer {
+          width: 80vw;
+        }
+      }
+    }
+  }
+}

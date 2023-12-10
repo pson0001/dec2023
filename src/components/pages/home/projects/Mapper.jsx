@@ -6,10 +6,12 @@ import mapper from '../../../assets/mapper.png'
 import Spline from '@splinetool/react-spline'
 import Background from './Background'
 import { Link } from 'react-router-dom'
+import useWindowSize from '../utils/use-window-size'
 
 const Mapper = () => {
   const title = `COURSE MAPPER`
   const description = `Generating over 60,000 personalized digital course plans for students through the efforts of course advisers`
+  const windowSize = useWindowSize()
 
   return (
     <div className={[c.projectContainer, c.leftAlign].join(' ')}>
@@ -29,9 +31,11 @@ const Mapper = () => {
                 </motion.div>
               </div>
             </motion.div>
-            <div className={c.mapperBall}>
-              <Spline scene="https://prod.spline.design/dbly-3QBB-fc4Icx/scene.splinecode" />
-            </div>
+            {windowSize.width >= 800 ? (
+              <div className={c.mapperBall}>
+                <Spline scene="https://prod.spline.design/dbly-3QBB-fc4Icx/scene.splinecode" />
+              </div>
+            ) : null}
           </div>
           <motion.div
             variants={container}
