@@ -22,7 +22,7 @@ const Library = () => {
   useEffect(() => {
     setTimeout(() => {
       setHeight(document.body.scrollHeight)
-    }, 10)
+    }, 100)
   }, [])
   return (
     <>

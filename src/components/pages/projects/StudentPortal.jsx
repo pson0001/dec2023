@@ -24,7 +24,7 @@ const StudentPortal = () => {
   useEffect(() => {
     setTimeout(() => {
       setHeight(document.body.scrollHeight)
-    }, 10)
+    }, 100)
   }, [])
   return (
     <>
@@ -61,10 +61,11 @@ const StudentPortal = () => {
               exceptional.
             </span>
           </div>
+          <div className={c.projectImg}>
+            <img src={landing} alt="landing" />
+          </div>
         </div>
-        <div className={c.projectImg}>
-          <img src={landing} alt="landing" />
-        </div>
+
         <div className={c.projectContent}>
           <div className={c.section}>
             <div className={c.title}>BACKGROUND</div>

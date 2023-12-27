@@ -15,13 +15,26 @@ const Planet = () => {
   const windowSize = useWindowSize()
   const title = `MY EXPERIENCE`
   const experience = [
-    { name: 'Principal UX Designer', company: 'Monash University eSolutions' },
-    { name: 'Senior UX Designer', company: 'Monash University eSolutions' },
+    {
+      name: 'Branding Designer',
+      company: '314 Design Studio',
+      date: 'Jan 2015 - Dec 2016',
+    },
     {
       name: 'UX Designer / Front-end Developer',
       company: 'Monash University eSolutions',
+      date: 'Jan 2019 - Aug 2021',
     },
-    { name: 'Branding Designer', company: '314 Design Studio' },
+    {
+      name: 'Senior UX Designer',
+      company: 'Monash University eSolutions',
+      date: 'Aug 2021 - Jan 2023',
+    },
+    {
+      name: 'Principal UX Designer - Present',
+      company: 'Monash University eSolutions',
+      date: 'Jan 2023 - Present',
+    },
   ]
 
   useEffect(() => {
@@ -34,7 +47,7 @@ const Planet = () => {
         })
         .to(
           '.ball02',
-          { scale: 1.5, transformOrigin: 'center', fill: '#69d4ff' },
+          { scale: 1.5, transformOrigin: 'center', fill: '#5A9F85' },
           0.45
         )
         .to('.text01', { opacity: 1 }, 0.45)
@@ -42,7 +55,7 @@ const Planet = () => {
 
         .to(
           '.ball03',
-          { scale: 1.5, transformOrigin: 'center', fill: '#ffad41' },
+          { scale: 1.5, transformOrigin: 'center', fill: '#ECAD62' },
           1.0
         )
         .to('.text02', { opacity: 1 }, 1.0)
@@ -50,7 +63,7 @@ const Planet = () => {
 
         .to(
           '.ball04',
-          { scale: 1.5, transformOrigin: 'center', fill: '#FFA6A6' },
+          { scale: 1.5, transformOrigin: 'center', fill: '#F47B93' },
           1.9
         )
         .to('.text03', { opacity: 1 }, 1.9)
@@ -58,7 +71,7 @@ const Planet = () => {
 
         .to(
           '.ball05',
-          { scale: 1.5, transformOrigin: 'center', fill: '#8eff32' },
+          { scale: 1.5, transformOrigin: 'center', fill: '#45A1F6' },
           3.4
         )
         .to('.text04', { opacity: 1 }, 3.4)
@@ -137,6 +150,21 @@ const Planet = () => {
                       )
                     })}
                   </motion.p>
+                  <motion.p
+                    variants={container}
+                    initial="hidden"
+                    whileInView="visible"
+                    className={c.subTitleDescription}
+                    key={'subDate' + index}
+                  >
+                    {item.date.split(' ').map((word, index) => {
+                      return (
+                        <span key={index} className={c.mask}>
+                          <motion.span variants={item}>{word}</motion.span>
+                        </span>
+                      )
+                    })}
+                  </motion.p>
                 </div>
               )
             })}
@@ -157,18 +185,18 @@ const Planet = () => {
                 fill="white"
                 opacity={0}
                 fontWeight={800}
-                fontSize="20px"
+                fontSize="24px"
               >
-                Principal UX Designer - Present
+                Branding Designer
               </text>
               <text
                 className="text011"
                 x="180"
-                y="134"
+                y="135"
                 fill="white"
                 opacity={0}
               >
-                Monash University eSolutions
+                314 Design Studio ( Jan 2015 - Dec 2016 )
               </text>
 
               <text
@@ -178,19 +206,20 @@ const Planet = () => {
                 fill="white"
                 opacity={0}
                 fontWeight={800}
-                fontSize="20px"
+                fontSize="24px"
               >
-                Senior UX Designer
+                UX Designer / Front-end Developer
               </text>
               <text
                 className="text021"
                 x="360"
-                y="275"
+                y="280"
                 fill="white"
                 opacity={0}
               >
-                Monash University eSolutions
+                Monash University eSolutions ( Jan 2019 - Aug 2021 )
               </text>
+
               <text
                 className="text03"
                 x="280"
@@ -198,19 +227,20 @@ const Planet = () => {
                 fill="white"
                 opacity={0}
                 fontWeight={800}
-                fontSize="20px"
+                fontSize="24px"
               >
-                UX Designer / Front-end Developer
+                Senior UX Designer
               </text>
               <text
                 className="text031"
                 x="280"
-                y="428"
+                y="435"
                 fill="white"
                 opacity={0}
               >
-                Monash University eSolutions
+                Monash University eSolutions ( Aug 2021 - Jan 2023 )
               </text>
+
               <text
                 className="text04"
                 x="190"
@@ -218,21 +248,22 @@ const Planet = () => {
                 fill="white"
                 opacity={0}
                 fontWeight={800}
-                fontSize="20px"
+                fontSize="24px"
                 cx="158"
                 cy="564"
               >
-                Branding Designer
+                Principal UX Designer
               </text>
               <text
                 className="text041"
                 x="190"
-                y="582"
+                y="590"
                 fill="white"
                 opacity={0}
               >
-                314 Design Studio
+                Monash University eSolutions ( Jan 2023 - Present )
               </text>
+
               <path
                 className="theLine"
                 d="M1 1C14.3333 28.3333 59.8 87.8 135 107C229 131 323.5 166 325 253.5C326.5 341 284.5 329.5 249 405.5C213.5 481.5 159.5 466 158.5 563.5"

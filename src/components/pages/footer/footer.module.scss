@@ -108,6 +108,7 @@ $iconBackground: #e6ded7;
 @media screen and (max-width: 900px) {
   .navigateButton {
     flex-direction: column;
+    padding: 20px;
     .next .arrowText {
       text-align: right;
     }

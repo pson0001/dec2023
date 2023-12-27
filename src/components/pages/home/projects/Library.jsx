@@ -6,6 +6,7 @@ import Background from './Background'
 
 import Spline from '@splinetool/react-spline'
 import useWindowSize from '../utils/use-window-size'
+import { Link } from 'react-router-dom'
 
 const Library = () => {
   const title = `COMPONENT LIBRARY`
@@ -49,7 +50,9 @@ const Library = () => {
             >
               <div className={c.pictureContainer}>
                 <motion.div variants={image}>
-                  <img src={library} alt="" />
+                  <Link to={'/monash-react-component-library'}>
+                    <img src={library} alt="" />
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

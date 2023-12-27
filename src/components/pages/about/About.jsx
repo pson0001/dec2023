@@ -14,8 +14,8 @@ const About = () => {
   }, [])
 
   const subtitle = `Hello, I’m Ping.`
-  const title = `I've dedicated 5 years to product design and additional 2 years to branding design.`
-  const titleTwo = `I create emotional design and turning big dreams into reality.`
+  const title = `I have 5 years of experience in product design and an additional 2 years in branding design.`
+  const titleTwo = `I love creating emotional designs and turning big dreams into reality.`
 
   return (
     <div className={c.landingContainer}>

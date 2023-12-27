@@ -112,13 +112,10 @@ $iconBackground: #e6ded7;
     gap: 2rem;
 
     .title {
-      // position: sticky;
-      // position: -webkit-sticky;
       top: 6rem;
       font-size: 3rem;
       font-weight: 800;
       height: fit-content;
-      background-color: #101010;
       width: 100%;
     }
 
@@ -266,6 +263,7 @@ $iconBackground: #e6ded7;
 .arrowContainer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   & > span {
     font-weight: 600;
   }
@@ -273,11 +271,17 @@ $iconBackground: #e6ded7;
 @media (max-width: 1119px) {
   .projectContentContainer {
     margin: 160px auto 0px;
-    padding: 0px 40px;
+    padding: 0px 20px;
   }
 }
 @media (max-width: 800px) {
+  .projectContainer {
+    .project {
+      padding: 20px;
+    }
+  }
   .projectContent {
+    padding: 20px;
     .sectionContentContainer {
       flex-direction: column;
 

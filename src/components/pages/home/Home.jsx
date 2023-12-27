@@ -77,7 +77,6 @@ const Home = () => {
   const landingRef = useRef()
   const [facePosition, setFacePosition] = useState([0, 0])
 
-  const [faceProjectPosition, setFaceProjectPosition] = useState([0, 0])
   const windowSize = useWindowSize()
 
   const landingContainerRef = useRef()
@@ -90,46 +89,64 @@ const Home = () => {
       const target = landingRef.current.getBoundingClientRect()
       setFacePosition([`${target.left - 398}px`, `${target.top - 500 + 60}px`])
     }
-    if (projectRef.current) {
-      const projectTarget = projectRef.current.getBoundingClientRect()
-      if (windowSize.width <= 800) {
-        setFaceProjectPosition([
-          -projectTarget.width + 40,
-          window.innerHeight - 40,
-        ])
-      } else {
-        setFaceProjectPosition([
-          -projectTarget.width - 80 - 30,
-          window.innerHeight + 20,
-        ])
-      }
-    }
-  }, [windowSize, landingRef, projectRef])
+  }, [windowSize, landingRef])
 
   useEffect(() => {
-    // const project = projectRef.current?.getBoundingClientRect()
-    gsap.set(moveElementRef.current, { x: 0, y: 0 })
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: partOneRef.current,
-          start: 'top top',
-          end: 'bottom bottom',
-          toggleActions: 'restart none reverse none',
-          scrub: true,
-        },
-      })
-      .to(moveElementRef.current, {
-        x: faceProjectPosition[0],
-        y: faceProjectPosition[1],
-      })
-  }, [
-    faceProjectPosition,
-    landingContainerRef,
-    moveElementRef,
-    partOneRef,
-    projectRef,
-  ])
+    const projectTarget = projectRef.current?.getBoundingClientRect()
+    // if (windowSize.width > 800) {
+
+    // } else {
+    //   gsap.set(moveElementRef.current, { x: 0, y: 0 })
+    //   gsap
+    //     .timeline({
+    //       scrollTrigger: {
+    //         trigger: partOneRef.current,
+    //         start: 'top top',
+    //         end: 'bottom bottom',
+    //         toggleActions: 'restart none reverse none',
+    //         scrub: true,
+    //       },
+    //     })
+    //     .to(moveElementRef.current, {
+    //       x: -projectTarget.width + 40,
+    //       y: window.innerHeight - 40,
+    //     })
+    // }
+    if (windowSize.width > 800) {
+      const desktop = gsap.set(moveElementRef.current, { x: 0, y: 0 })
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: partOneRef.current,
+            start: 'top top',
+            end: 'bottom bottom',
+            toggleActions: 'restart none reverse none',
+            scrub: true,
+          },
+        })
+        .to(moveElementRef.current, {
+          x: -projectTarget.width - 80 - 32,
+          y: window.innerHeight + 10,
+        })
+    }
+    //  else {
+    //   const mobile = gsap.set(moveElementRef.current, { x: 0, y: 0 })
+    //   gsap
+    //     .timeline({
+    //       scrollTrigger: {
+    //         trigger: partOneRef.current,
+    //         start: 'top top',
+    //         end: 'bottom bottom',
+    //         toggleActions: 'restart none reverse none',
+    //         scrub: true,
+    //       },
+    //     })
+    //     .to(moveElementRef.current, {
+    //       x: -projectTarget.width + 40,
+    //       y: window.innerHeight - 40,
+    //     })
+    // }
+  }, [landingContainerRef, moveElementRef, partOneRef, projectRef, windowSize])
 
   return (
     <div className={c.homeContainer} ref={landingContainerRef}>
@@ -142,7 +159,8 @@ const Home = () => {
           <Face faceRef={faceRef} />
         </div>
         <Landing landingRef={landingRef} />
-        <Project projectRef={projectRef} />
+
+        {windowSize.width > 800 ? <Project projectRef={projectRef} /> : null}
       </div>
       <Portal />
       <Mapper />

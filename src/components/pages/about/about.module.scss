@@ -48,3 +48,8 @@
     stroke-linecap: round;
   }
 }
+@media screen and (max-width: 800px) {
+  .intro {
+    margin-top: 200px;
+  }
+}

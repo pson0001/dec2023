@@ -7,8 +7,8 @@ const Landing = ({ landingRef }) => {
   const subTitle = `HI, I'M`
   const firstName = `PING`
   const lastName = `S NG`
-  const description = `I’M A PASSIONATE PRODUCT DESIGNER AND DEVELOPER, BASED IN AUSTRALIA. I TRANSFORM IDEAS INTO BEAUTIFUL AND ENGAGING PRODUCTS THAT CONNECT THE VISION WITH EMOTIONS.`
-
+  const description = `I’M A PASSIONATE PRODUCT DESIGNER AND DEVELOPER, BASED IN AUSTRALIA. I KEEP THINGS SIMPLE, CREATIVE, EMOTIONAL & FUN!`
+  // const description = `I've been creating digital products, user experiences and branding for over 7 years. I keep things simple, creative and fun!`
   return (
     <div className={c.landingContainer}>
       <div className={c.intro}>

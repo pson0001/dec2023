@@ -5,6 +5,7 @@ import peerview from '../../../assets/peerview.png'
 import Spline from '@splinetool/react-spline'
 import Background from './Background'
 import useWindowSize from '../utils/use-window-size'
+import { Link } from 'react-router-dom'
 const Peerview = () => {
   const title = `PEERVIEW`
   const description = `Facilitating seamless academic peer review processes across 10 faculties`
@@ -21,7 +22,9 @@ const Peerview = () => {
             >
               <div className={c.pictureContainer}>
                 <motion.div variants={image}>
-                  <img src={peerview} alt="" />
+                  <Link to={'/monash-peerview'}>
+                    <img src={peerview} alt="" />
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>{' '}

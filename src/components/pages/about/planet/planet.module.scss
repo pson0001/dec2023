@@ -64,9 +64,17 @@
     }
   }
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 1200px) {
   .planetContainer {
     align-items: flex-start;
     margin: 0 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .planetContainer {
+    align-items: flex-start;
+    margin: 0;
   }
 }
