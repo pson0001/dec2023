@@ -1,0 +1,44 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="830" y="450" width="257" height="188" rx="8" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 814 450)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 814 478)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 814 506)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 814 534)" fill="white" fill-opacity="0.2"/>
+<rect x="723.5" y="408.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M723 434H1102" stroke="white"/>
+<circle cx="1085" cy="422" r="4.5" stroke="white"/>
+<rect x="739" y="758" width="284" height="189" rx="8" fill="white" fill-opacity="0.2"/>
+<path d="M1043 766C1043 761.582 1046.58 758 1051 758H1102V947H1051C1046.58 947 1043 943.418 1043 939V766Z" fill="white" fill-opacity="0.2"/>
+<rect x="723.5" y="716.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M723 742H1102" stroke="white"/>
+<circle cx="1085" cy="730" r="4.5" stroke="white"/>
+<rect x="1204" y="142" width="345" height="156" rx="8" fill="white" fill-opacity="0.2"/>
+<path d="M1204 322C1204 317.582 1207.58 314 1212 314H1541C1545.42 314 1549 317.582 1549 322V347H1204V322Z" fill="white" fill-opacity="0.2"/>
+<rect x="1183.5" y="100.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M1183 126H1562" stroke="white"/>
+<circle cx="1545" cy="114" r="4.5" stroke="white"/>
+<rect x="1199" y="450" width="257" height="188" rx="8" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 1547 450)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 1547 478)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 1547 506)" fill="white" fill-opacity="0.2"/>
+<rect width="75" height="20" rx="8" transform="matrix(-1 0 0 1 1547 534)" fill="white" fill-opacity="0.2"/>
+<rect x="1183.5" y="408.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M1183 434H1562" stroke="white"/>
+<circle cx="1545" cy="422" r="4.5" stroke="white"/>
+<rect x="1199" y="786" width="348" height="160" rx="8" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 1280 754)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 1369 754)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 1458 754)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 1547 754)" fill="white" fill-opacity="0.2"/>
+<rect x="1183.5" y="716.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M1183 742H1562" stroke="white"/>
+<circle cx="1545" cy="730" r="4.5" stroke="white"/>
+<rect x="279" y="758" width="348" height="160" rx="8" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 360 930)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 449 930)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 538 930)" fill="white" fill-opacity="0.2"/>
+<rect width="81" height="20" rx="8" transform="matrix(-1 0 0 1 627 930)" fill="white" fill-opacity="0.2"/>
+<rect x="263.5" y="716.5" width="379" height="247" rx="15.5" stroke="white"/>
+<path d="M263 742H642" stroke="white"/>
+<circle cx="625" cy="730" r="4.5" stroke="white"/>
+</svg>

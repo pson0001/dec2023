@@ -125,7 +125,7 @@ const Home = () => {
           },
         })
         .to(moveElementRef.current, {
-          x: -projectTarget.width - 80 - 32,
+          x: -projectTarget.width - 80 - 30,
           y: window.innerHeight + 10,
         })
     }

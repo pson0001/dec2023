@@ -12,6 +12,7 @@ import detailThree from '../../assets/projects/detail-three.png'
 import transition from '../../layout/transition'
 import Footer from '../footer/Footer'
 import Background from '../home/projects/Background'
+import ReactPlayer from 'react-player'
 
 const CourseMapper = () => {
   useEffect(() => {
@@ -274,14 +275,15 @@ const CourseMapper = () => {
           <div className={c.section}>
             <div className={c.title}>BRING IT ALL TOGETHER</div>
             <div className={c.subSection}>
-              <div className={c.videoContainer}>
-                <iframe
-                  className={c.iframe}
-                  title="course mapper"
-                  src="https://drive.google.com/file/d/1aVB5vu2ieN7mtR_kJ8SRz_UQRakUzDuI/preview"
-                ></iframe>
+              <div className="video-container">
+                <ReactPlayer
+                  url="https://drive.google.com/uc?id=1aVB5vu2ieN7mtR_kJ8SRz_UQRakUzDuI"
+                  controls={true}
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                />
               </div>
-
               <div className={c.subDescription}>
                 Taking user feedback to heart, we have iteratively refined and
                 released several updates since the initial launch of Course
